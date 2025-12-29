@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./git.nix # Git 設定を分離して管理
+    ./git.nix     # Git 設定
+    ./zsh.nix     # zsh 設定
+    ./ghostty.nix # Ghostty 設定
   ];
 
   # ユーザー情報
@@ -18,9 +20,6 @@
     enable = true;
     nix-direnv.enable = true; # nix-direnv で高速化 & キャッシュ
   };
-
-  # zsh を有効化（direnv のフックを動かすために必要）
-  programs.zsh.enable = true;
 
   # 必須: Home Manager のバージョン管理
   home.stateVersion = "24.11";
