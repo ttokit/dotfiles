@@ -21,6 +21,11 @@
     nix-direnv.enable = true; # nix-direnv で高速化 & キャッシュ
   };
 
+  # グローバルにインストールするパッケージ
+  home.packages = with pkgs; [
+    nodejs_24 # 最新LTS (Krypton, 2028年4月までサポート)
+  ];
+
   # 必須: Home Manager のバージョン管理
   home.stateVersion = "24.11";
 }
