@@ -5,6 +5,7 @@
     ./git.nix     # Git 設定
     ./zsh.nix     # zsh 設定
     ./ghostty.nix # Ghostty 設定
+    ./claude.nix  # Claude Code 設定
   ];
 
   # ユーザー情報
@@ -24,6 +25,7 @@
   # グローバルにインストールするパッケージ
   home.packages = with pkgs; [
     nodejs_24 # 最新LTS (Krypton, 2028年4月までサポート)
+    uv        # Python パッケージマネージャー (uvx を含む)
   ];
 
   # 必須: Home Manager のバージョン管理
