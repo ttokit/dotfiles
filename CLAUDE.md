@@ -19,6 +19,16 @@ sudo darwin-rebuild switch --flake .#ttokit-mac-mini
 
 `sudo` はシステムアクティベーションに必要。`$HOME` の所有権に関する警告は無害。
 
+### Claude Code での検証
+
+Claude Code ではインタラクティブなパスワード入力ができないため、`sudo darwin-rebuild switch` は実行できない。代わりにビルドのみで検証：
+
+```bash
+darwin-rebuild build --flake .#ttokit-mac-mini
+```
+
+実際の適用はユーザーが手動で `sudo darwin-rebuild switch` を実行する。
+
 ### 新しい .nix ファイルを追加した場合
 Nix が認識するには Git での追跡が必要：
 ```bash
