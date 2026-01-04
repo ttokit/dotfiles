@@ -19,6 +19,42 @@ Always use context7 when I need code generation, setup or configuration steps, o
 - GitHubのリソース（リポジトリ、Issue、PR、コード等）を取得する際は、常にghコマンドを使用する
 - WebFetchやWebSearchではなく、ghコマンドを優先する
 
+## Git Commit Messages
+
+Conventional Commits 1.0.0 の形式でコミットメッセージを作成：
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Type 一覧
+
+- `feat`: 新機能
+- `fix`: バグ修正
+- `docs`: ドキュメントのみの変更
+- `style`: コードの意味に影響しない変更（空白、フォーマット等）
+- `refactor`: バグ修正や機能追加ではないコード変更
+- `perf`: パフォーマンス改善
+- `test`: テストの追加・修正
+- `chore`: ビルドプロセスやツールの変更
+
+### ルール
+
+- type は英語のまま使用
+- description（説明文）は日本語で記述
+- 破壊的変更がある場合は `!` を付与（例: `feat!: 認証APIを変更`）
+
+### 例
+
+- `feat: ユーザー認証機能を追加`
+- `fix(auth): ログイン時のエラーハンドリングを修正`
+- `docs: READMEにインストール手順を追加`
+- `refactor: 認証モジュールの構造を整理`
+
 ## Development Philosophy
 
 ### Test-Driven Development (TDD)
