@@ -22,6 +22,7 @@
       macos-titlebar-style = "tabs";
       background-opacity = 0.8;
       background-blur = true;
+      macos-option-as-alt = true;
       window-inherit-working-directory = true;
       window-save-state = "always";
 

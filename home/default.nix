@@ -5,6 +5,7 @@
     ./git.nix     # Git 設定
     ./zsh.nix     # zsh 設定
     ./ghostty.nix # Ghostty 設定
+    ./claude.nix  # Claude Code 設定
   ];
 
   # ユーザー情報
