@@ -26,6 +26,7 @@
   home.packages = with pkgs; [
     nodejs_24 # 最新LTS (Krypton, 2028年4月までサポート)
     uv        # Python パッケージマネージャー (uvx を含む)
+    gh        # GitHub CLI
   ];
 
   # 必須: Home Manager のバージョン管理

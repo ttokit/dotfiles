@@ -2,10 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Context7
-
-Always use context7 when I need code generation, setup or configuration steps, or library/API documentation. This means you should automatically use the Context7 MCP tools to resolve library id and get library docs without me having to explicitly ask.
-
 ## 概要
 
 macOS (Apple Silicon) 向けの Nix ベース dotfiles リポジトリ。以下を使用：
@@ -61,3 +57,12 @@ Ghostty は設定ファイルを順番に読み込み、後のファイルが優
 2. `~/Library/Application Support/com.mitchellh.ghostty/config`
 
 両方存在すると後者が優先される。Home Manager の設定を使うには Application Support の config を削除またはリネーム。
+
+### 複数Mac環境の管理（将来の検討事項）
+現在は単一ホスト（ttokit-mac-mini）のみ。別のMacを追加する場合の一般的なアプローチ：
+
+1. **複数ホストをコミット** - flake.nix に複数の darwinConfigurations を定義
+2. **共通設定のモジュール化** - `modules/` に共通部分を抽出
+3. **flake-parts/Blueprint** - 自動発見機能で接続コード削減
+
+参考: [billimek/dotfiles](https://github.com/billimek/dotfiles), [clo4/nix-dotfiles](https://github.com/clo4/nix-dotfiles)
