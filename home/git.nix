@@ -23,24 +23,12 @@
       "result-*"
     ];
 
-    # Git 設定（新しい settings 形式）
+    # Git 設定
     settings = {
-      # ユーザー情報（後で変更してください）
+      # ユーザー情報
       user = {
-        name = "Your Name";
-        email = "your.email@example.com";
-      };
-
-      # よく使うエイリアス
-      alias = {
-        st = "status";
-        co = "checkout";
-        br = "branch";
-        ci = "commit";
-        lg = "log --oneline --graph --decorate";
-        unstage = "reset HEAD --";
-        last = "log -1 HEAD";
-        amend = "commit --amend --no-edit";
+        name = "Tatsuya Toki";
+        email = "tatsuya.toki@access-company.com";
       };
 
       # その他の設定
