@@ -30,3 +30,7 @@ flake.nix                    # エントリーポイント
 ## 参照
 
 - @docs/multi-mac-setup.md - 複数Mac環境の管理（将来用）
+
+## Individual Preferences
+<!-- Optional: personal instructions (not committed) -->
+- @~/.claude/dotfiles-instructions.md
