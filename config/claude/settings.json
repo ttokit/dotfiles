@@ -7,5 +7,6 @@
     "example-skills@anthropic-agent-skills": true,
     "security-guidance@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
-  }
+  },
+  "language": "日本語"
 }
