@@ -7,6 +7,7 @@
     ./ghostty.nix # Ghostty 設定
     ./claude.nix  # Claude Code 設定
     ./ssh.nix     # SSH 設定
+    ./yazi.nix    # Yazi ファイルマネージャー設定
   ];
 
   # ユーザー情報
