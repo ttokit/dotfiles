@@ -32,6 +32,8 @@
       # キーバインド
       keybind = [
         "ctrl+h=goto_split:left"
+        "ctrl+j=goto_split:bottom"
+        "ctrl+k=goto_split:top"
         "ctrl+l=goto_split:right"
         "shift+enter=text:\\x1b\\r"
         "cmd+d=new_split:right"
