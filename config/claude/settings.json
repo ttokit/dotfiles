@@ -1,14 +1,4 @@
 {
-  "enabledPlugins": {
-    "context7@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "example-skills@anthropic-agent-skills": true,
-    "security-guidance@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
-  },
-  "language": "日本語",
   "hooks": {
     "Notification": [
       {
@@ -26,5 +16,18 @@
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
-  }
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true,
+    "security-guidance@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "dig@kuu-marketplace": true,
+    "fix-ci@kuu-marketplace": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "language": "日本語"
 }
