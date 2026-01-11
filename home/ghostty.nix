@@ -11,8 +11,8 @@
       # テーマ
       theme = "TokyoNight";
 
-      # フォント設定（Nerd Font優先、日本語はOSフォントでフォールバック）
-      font-family = "JetBrainsMono Nerd Font";
+      # フォント設定（白源 Nerd Font）
+      font-family = "HackGen Console NF";
       font-size = 20;
       font-thicken = true;
       adjust-cell-height = 2;
