@@ -1,7 +1,7 @@
 # Claude Code settings.json 設定例
 
-`~/.claude/settings.json` の設定例。このファイルは Claude Code が自動更新するため、
-dotfiles では直接管理せず、参考用としてドキュメント化している。
+`~/.claude/settings.json` は `config/claude/settings.json` へのシンボリックリンクとして管理。
+Claude Code が自動更新する項目（`feedbackSurveyState` 等）があるため、変更時はコミットが必要。
 
 ## 設定例
 
