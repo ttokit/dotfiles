@@ -26,6 +26,7 @@
     # エイリアス
     shellAliases = {
       cc = "claude";
+      lg = "lazygit";
     };
   };
 }
