@@ -11,8 +11,8 @@
       # テーマ
       theme = "TokyoNight";
 
-      # フォント設定
-      font-family = "Source Han Code JP";
+      # フォント設定（Nerd Font優先、日本語はOSフォントでフォールバック）
+      font-family = "JetBrainsMono Nerd Font";
       font-size = 20;
       font-thicken = true;
       adjust-cell-height = 2;
