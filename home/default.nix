@@ -32,6 +32,8 @@
     lazygit   # Git TUI クライアント
     nodePackages.typescript
     nodePackages.typescript-language-server
+    # Nerd Fonts (Powerlevel10k用)
+    nerd-fonts.jetbrains-mono
   ];
 
   # 必須: Home Manager のバージョン管理
