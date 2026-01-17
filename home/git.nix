@@ -1,6 +1,18 @@
 { config, pkgs, ... }:
 
 {
+  # delta（美しいdiff表示）
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      side-by-side = true;
+      line-numbers = true;
+      syntax-theme = "TwoDark";
+    };
+  };
+
   programs.git = {
     enable = true;
 

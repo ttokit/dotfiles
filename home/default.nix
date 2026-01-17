@@ -2,13 +2,17 @@
 
 {
   imports = [
-    ./git.nix     # Git 設定
-    ./zsh.nix     # zsh 設定
-    ./ghostty.nix # Ghostty 設定
-    ./claude.nix  # Claude Code 設定
-    ./ssh.nix     # SSH 設定
-    ./yazi.nix    # Yazi ファイルマネージャー設定
-    ./npm.nix     # npm グローバルパッケージ管理
+    ./git.nix         # Git 設定
+    ./zsh.nix         # zsh 設定
+    ./ghostty.nix     # Ghostty 設定
+    ./claude.nix      # Claude Code 設定
+    ./ssh.nix         # SSH 設定
+    ./yazi.nix        # Yazi ファイルマネージャー設定
+    ./npm.nix         # npm グローバルパッケージ管理
+    ./modern-cli.nix  # モダンCLIツール（bat, eza, fd, rg, procs, dust, bottom）
+    ./fzf.nix         # ファジー検索
+    ./zoxide.nix      # スマートディレクトリジャンプ
+    ./starship.nix    # プロンプト（TokyoNight テーマ）
   ];
 
   # ユーザー情報
