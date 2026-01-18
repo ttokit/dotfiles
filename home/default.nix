@@ -14,6 +14,7 @@
     ./fzf.nix         # ファジー検索
     ./zoxide.nix      # スマートディレクトリジャンプ
     ./starship.nix    # プロンプト（TokyoNight テーマ）
+    ./rust.nix        # Rust/Cargo
   ];
 
   # ユーザー情報
