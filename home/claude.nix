@@ -1,6 +1,11 @@
 { config, ... }:
 
 {
+  # Claude Code ネイティブインストール用の PATH 設定
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   home.file = {
     ".claude/CLAUDE.md".source = ./claude/CLAUDE.md;
 

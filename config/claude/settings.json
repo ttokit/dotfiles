@@ -30,5 +30,6 @@
     "code-simplifier@claude-plugins-official": true,
     "claude-delegator@jarrodwatts-claude-delegator": true
   },
-  "language": "日本語"
+  "language": "Japanese",
+  "autoUpdatesChannel": "latest"
 }
