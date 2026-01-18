@@ -15,6 +15,9 @@
 
     # プロンプト切替（USE_STARSHIP=1 で Starship、未設定で p10k）
     initContent = ''
+      # 大文字小文字を区別しない補完
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
       if [[ -n "$USE_STARSHIP" ]]; then
         # Starship プロンプト
         eval "$(starship init zsh)"
