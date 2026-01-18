@@ -32,6 +32,7 @@
     # 環境変数（デフォルトで Starship 有効）
     sessionVariables = {
       USE_STARSHIP = "1";
+      EDITOR = "nvim";
     };
 
     # ヒストリ設定

@@ -8,6 +8,7 @@
     ./claude.nix      # Claude Code 設定
     ./ssh.nix         # SSH 設定
     ./yazi.nix        # Yazi ファイルマネージャー設定
+    ./neovim.nix      # Neovim エディタ設定
     ./npm.nix         # npm グローバルパッケージ管理
     ./modern-cli.nix  # モダンCLIツール（bat, eza, fd, rg, procs, dust, bottom）
     ./fzf.nix         # ファジー検索
