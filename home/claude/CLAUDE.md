@@ -12,7 +12,7 @@ Always use context7 when I need code generation, setup or configuration steps, o
 
 - 自明なコードコメントは書かないでください
 - 不要な空白は削除してください
-- 新規ファイルを作成する際は必ず末尾に改行を足すこと
+- ファイルの末尾には必ず改行を入れること（新規作成・編集問わず）
 
 ## GitHub Operations
 
@@ -67,3 +67,28 @@ Conventional Commits 1.0.0 の形式でコミットメッセージを作成：
 - その後、テストをパスさせる実装を進める
 - 実装中はテストを変更せず、コードを修正し続ける
 - すべてのテストが通過するまで繰り返す
+
+## Learning Documentation
+
+For every project, write a detailed FOR_TTOKIT.md file that explains the whole project in plain language.
+
+**File location:** `~/.claude/learnings/{project-name}/FOR_TTOKIT.md`
+
+**When to create/update:**
+- When explicitly requested by the user
+- After completing a significant milestone or feature
+- After fixing a non-trivial bug (especially when: root cause was unexpected, debugging took significant effort, or the fix revealed important insights about the system)
+- When learning a new technology, pattern, or best practice through the work
+- After making an important architectural decision
+
+**Content to include:**
+- Technical architecture and how the codebase is structured
+- How the various parts are connected
+- Technologies used and why we made these technical decisions
+- Lessons learned: bugs encountered and how we fixed them, potential pitfalls and how to avoid them, new technologies used, best practices discovered
+
+**Style requirements:**
+- Write in Japanese (日本語で記述すること)
+- Make it engaging to read; avoid boring technical documentation style
+- Use analogies and anecdotes where appropriate to make concepts understandable and memorable
+- Focus on the "why" behind decisions, not just the "what"
