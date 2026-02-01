@@ -34,7 +34,9 @@
     "fix-ci@kuu-marketplace": true,
     "code-simplifier@claude-plugins-official": true,
     "claude-delegator@jarrodwatts-claude-delegator": true,
-    "decomposition@kuu-marketplace": true
+    "decomposition@kuu-marketplace": true,
+    "document-skills@anthropic-agent-skills": true,
+    "deslop@kuu-marketplace": true
   },
   "language": "Japanese",
   "autoUpdatesChannel": "latest"
