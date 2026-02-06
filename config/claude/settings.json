@@ -36,7 +36,8 @@
     "claude-delegator@jarrodwatts-claude-delegator": true,
     "decomposition@kuu-marketplace": true,
     "document-skills@anthropic-agent-skills": true,
-    "deslop@kuu-marketplace": true
+    "deslop@kuu-marketplace": true,
+    "clarify@kuu-marketplace": true
   },
   "language": "Japanese",
   "autoUpdatesChannel": "latest"
