@@ -13,8 +13,8 @@ context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200
 current_usage=$(echo "$input" | jq '.context_window.current_usage')
 
 # Autocompact buffer percentage (estimated, as API doesn't provide this)
-# This reserves ~23% of context window for autocompact functionality
-autocompact_buffer_percent=23
+# As of 2026-02, the buffer is ~33k tokens (16.5% of 200k) — rounded up to 17
+autocompact_buffer_percent=17
 
 # Calculate context percentage (accounting for autocompact buffer)
 if [ "$current_usage" != "null" ]; then
