@@ -52,6 +52,7 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       rerere.enabled = true; # 同じコンフリクトを自動解決
+      ghq.root = "~/ghq";
     };
   };
 }

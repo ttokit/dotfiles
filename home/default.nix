@@ -12,6 +12,7 @@
     ./npm.nix         # npm グローバルパッケージ管理
     ./modern-cli.nix  # モダンCLIツール（bat, eza, fd, rg, procs, dust, bottom）
     ./fzf.nix         # ファジー検索
+    ./ghq.nix         # ghq リポジトリ管理
     ./zoxide.nix      # スマートディレクトリジャンプ
     ./starship.nix    # プロンプト（TokyoNight テーマ）
     ./rust.nix        # Rust/Cargo
