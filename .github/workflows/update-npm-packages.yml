@@ -1,0 +1,90 @@
+name: Update npm Global Packages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日 09:00 JST = UTC 00:00
+
+jobs:
+  update:
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: npm パッケージの更新を確認
+        id: check
+        run: |
+          UPDATED=false
+          FILE="home/npm.nix"
+
+          # npmGlobalPackages リストからパッケージを抽出
+          PACKAGES=$(grep -oP '"\K[^"]+(?=")' "$FILE" | grep '@[0-9]')
+
+          for pkg in $PACKAGES; do
+            # スコープ付きパッケージ対応: 最後の @バージョン で分離
+            if [[ "$pkg" =~ ^(.+)@([0-9].*)$ ]]; then
+              NAME="${BASH_REMATCH[1]}"
+              CURRENT="${BASH_REMATCH[2]}"
+            else
+              continue
+            fi
+
+            LATEST=$(npm view "$NAME" dist-tags.latest 2>/dev/null)
+            if [ -z "$LATEST" ]; then
+              echo "::warning::$NAME の最新バージョンを取得できませんでした"
+              continue
+            fi
+
+            if [ "$CURRENT" != "$LATEST" ]; then
+              echo "$NAME: $CURRENT -> $LATEST"
+              sed -i "s|${NAME}@${CURRENT}|${NAME}@${LATEST}|g" "$FILE"
+              UPDATED=true
+            else
+              echo "$NAME: $CURRENT (最新)"
+            fi
+          done
+
+          echo "updated=$UPDATED" >> "$GITHUB_OUTPUT"
+
+      - name: PR を作成
+        if: steps.check.outputs.updated == 'true'
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update-npm-packages
+          commit-message: "chore(npm): グローバルパッケージを更新"
+          title: "chore(npm): グローバルパッケージを更新"
+          body: |
+            npm グローバルパッケージの自動更新
+
+            ## 確認手順
+            1. ローカルで `git fetch && git checkout <branch>`
+            2. `darwin-rebuild build --flake .#ttokit-mac-mini` でビルド検証
+            3. 問題なければマージ
+
+      - name: Slack 通知
+        if: always()
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "${{ failure() && ':x: npm パッケージ更新処理が失敗しました' || steps.create-pr.outputs.pull-request-number && format(':package: npm パッケージ更新 PR #{0} を作成しました', steps.create-pr.outputs.pull-request-number) || ':white_check_mark: npm パッケージに更新はありませんでした' }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ failure() && format(':x: *npm パッケージ更新処理が失敗しました*\nリポジトリ: `{0}`\n<https://github.com/{0}/actions/runs/{1}|ログを確認>', github.repository, github.run_id) || steps.create-pr.outputs.pull-request-number && format(':package: *<{0}|npm パッケージ更新 PR #{1}>* を作成しました\nリポジトリ: `{2}`', steps.create-pr.outputs.pull-request-url, steps.create-pr.outputs.pull-request-number, github.repository) || format(':white_check_mark: *npm パッケージに更新はありませんでした*\nリポジトリ: `{0}`', github.repository) }}"
+                  }
+                }
+              ]
+            }
