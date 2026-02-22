@@ -21,6 +21,7 @@
       maximize = true;
       macos-titlebar-style = "tabs";
       background-opacity = 0.8;
+      unfocused-split-opacity = 0.7;
       background-blur = true;
       macos-option-as-alt = true;
       window-inherit-working-directory = true;
