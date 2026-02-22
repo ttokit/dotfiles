@@ -77,13 +77,13 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              "text": "${{ failure() && ':x: npm パッケージ更新処理が失敗しました' || steps.create-pr.outputs.pull-request-number && format(':package: npm パッケージ更新 PR #{0} を作成しました', steps.create-pr.outputs.pull-request-number) || ':white_check_mark: npm パッケージに更新はありませんでした' }}",
+              "text": "${{ job.status == 'failure' && ':x: npm パッケージ更新処理が失敗しました' || steps.create-pr.outputs.pull-request-number && format(':package: npm パッケージ更新 PR #{0} を作成しました', steps.create-pr.outputs.pull-request-number) || ':white_check_mark: npm パッケージに更新はありませんでした' }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ failure() && format(':x: *npm パッケージ更新処理が失敗しました*\nリポジトリ: `{0}`\n<https://github.com/{0}/actions/runs/{1}|ログを確認>', github.repository, github.run_id) || steps.create-pr.outputs.pull-request-number && format(':package: *<{0}|npm パッケージ更新 PR #{1}>* を作成しました\nリポジトリ: `{2}`', steps.create-pr.outputs.pull-request-url, steps.create-pr.outputs.pull-request-number, github.repository) || format(':white_check_mark: *npm パッケージに更新はありませんでした*\nリポジトリ: `{0}`', github.repository) }}"
+                    "text": "${{ job.status == 'failure' && format(':x: *npm パッケージ更新処理が失敗しました*\nリポジトリ: `{0}`\n<https://github.com/{0}/actions/runs/{1}|ログを確認>', github.repository, github.run_id) || steps.create-pr.outputs.pull-request-number && format(':package: *<{0}|npm パッケージ更新 PR #{1}>* を作成しました\nリポジトリ: `{2}`', steps.create-pr.outputs.pull-request-url, steps.create-pr.outputs.pull-request-number, github.repository) || format(':white_check_mark: *npm パッケージに更新はありませんでした*\nリポジトリ: `{0}`', github.repository) }}"
                   }
                 }
               ]

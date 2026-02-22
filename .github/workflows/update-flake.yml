@@ -36,13 +36,13 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              "text": "${{ steps.update.outcome == 'failure' && ':x: Flake 更新処理が失敗しました' || steps.update.outputs.pull-request-number && format(':package: Flake 更新 PR #{0} を作成しました', steps.update.outputs.pull-request-number) || ':white_check_mark: Flake に更新はありませんでした' }}",
+              "text": "${{ job.status == 'failure' && ':x: Flake 更新処理が失敗しました' || steps.update.outputs.pull-request-number && format(':package: Flake 更新 PR #{0} を作成しました', steps.update.outputs.pull-request-number) || ':white_check_mark: Flake に更新はありませんでした' }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ steps.update.outcome == 'failure' && format(':x: *Flake 更新処理が失敗しました*\nリポジトリ: `{0}`\n<https://github.com/{0}/actions/runs/{1}|ログを確認>', github.repository, github.run_id) || steps.update.outputs.pull-request-number && format(':package: *<{0}|Flake 更新 PR #{1}>* を作成しました\nリポジトリ: `{2}`', steps.update.outputs.pull-request-url, steps.update.outputs.pull-request-number, github.repository) || format(':white_check_mark: *Flake に更新はありませんでした*\nリポジトリ: `{0}`', github.repository) }}"
+                    "text": "${{ job.status == 'failure' && format(':x: *Flake 更新処理が失敗しました*\nリポジトリ: `{0}`\n<https://github.com/{0}/actions/runs/{1}|ログを確認>', github.repository, github.run_id) || steps.update.outputs.pull-request-number && format(':package: *<{0}|Flake 更新 PR #{1}>* を作成しました\nリポジトリ: `{2}`', steps.update.outputs.pull-request-url, steps.update.outputs.pull-request-number, github.repository) || format(':white_check_mark: *Flake に更新はありませんでした*\nリポジトリ: `{0}`', github.repository) }}"
                   }
                 }
               ]
