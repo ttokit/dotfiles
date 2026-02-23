@@ -18,6 +18,16 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/ttokit/.claude/hooks/explain-risk.js"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
