@@ -14,6 +14,7 @@ Always use context7 when I need code generation, setup or configuration steps, o
 
 - GitHubのリソース（リポジトリ、Issue、PR、コード等）を取得する際は、常にghコマンドを使用する
 - WebFetchやWebSearchではなく、ghコマンドを優先する
+- ghコマンドがTLSエラーで失敗した場合、sandboxモードが原因の可能性が高い。sandboxを無効化してリトライすること
 
 ## Git Commit Messages
 
