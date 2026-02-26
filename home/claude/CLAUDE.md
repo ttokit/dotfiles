@@ -23,3 +23,9 @@ Conventional Commits 形式で、description は日本語で記述する。
 ## Development Philosophy
 
 - TDD を採用（テスト先行）
+
+## Agent Guidelines
+
+- 過剰な正確さよりシンプルさを優先すること
+- YAGNI、KISS、DRY を徹底する
+- 後方互換のための shim やフォールバックは、循環的複雑度を増やさない場合のみ許容する
