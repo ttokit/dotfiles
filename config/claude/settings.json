@@ -40,7 +40,8 @@
     "decomposition@kuu-marketplace": true,
     "document-skills@anthropic-agent-skills": true,
     "deslop@kuu-marketplace": true,
-    "clarify@kuu-marketplace": true
+    "clarify@kuu-marketplace": true,
+    "superpowers@claude-plugins-official": true
   },
   "language": "Japanese",
   "autoUpdatesChannel": "latest"
