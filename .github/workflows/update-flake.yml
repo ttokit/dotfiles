@@ -20,6 +20,7 @@ jobs:
         id: update
         with:
           pr-title: "chore(flake): flake.lock を更新"
+          pr-reviewers: ttokit
           pr-body: |
             `nix flake update` による自動更新
 

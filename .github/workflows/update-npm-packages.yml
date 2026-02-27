@@ -58,6 +58,7 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
+          reviewers: ttokit
           branch: chore/update-npm-packages
           commit-message: "chore(npm): グローバルパッケージを更新"
           title: "chore(npm): グローバルパッケージを更新"
