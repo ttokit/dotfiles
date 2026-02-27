@@ -16,6 +16,7 @@
     ./zoxide.nix      # スマートディレクトリジャンプ
     ./starship.nix    # プロンプト（TokyoNight テーマ）
     ./rust.nix        # Rust/Cargo
+    ./jankyborders.nix # ウィンドウボーダー
   ];
 
   # ユーザー情報
