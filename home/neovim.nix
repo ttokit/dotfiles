@@ -16,7 +16,7 @@
       ]))
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.cmd.colorscheme("tokyonight-night")
 
       vim.opt.number = true
