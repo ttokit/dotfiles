@@ -9,18 +9,16 @@ model_name=$(echo "$input" | jq -r '.model.display_name')
 current_dir=$(echo "$input" | jq -r '.workspace.current_dir')
 
 # Extract context window information
-context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
+context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 1000000')
 current_usage=$(echo "$input" | jq '.context_window.current_usage')
 
-# Autocompact buffer percentage (estimated, as API doesn't provide this)
-# As of 2026-02, the buffer is ~33k tokens (16.5% of 200k) — rounded up to 17
-autocompact_buffer_percent=17
+# Autocompact buffer: fixed at ~33k tokens regardless of context window size
+autocompact_buffer_tokens=33000
 
 # Calculate context percentage (accounting for autocompact buffer)
 if [ "$current_usage" != "null" ]; then
     current_tokens=$(echo "$current_usage" | jq '.input_tokens + .cache_creation_input_tokens + .cache_read_input_tokens')
-    # Calculate effective size excluding autocompact buffer
-    effective_size=$((context_size * (100 - autocompact_buffer_percent) / 100))
+    effective_size=$((context_size - autocompact_buffer_tokens))
     context_percent=$((current_tokens * 100 / effective_size))
     # Cap at 100% to avoid display issues
     [ $context_percent -gt 100 ] && context_percent=100
