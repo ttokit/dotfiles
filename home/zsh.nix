@@ -54,6 +54,7 @@
     # エイリアス
     shellAliases = {
       cc = "claude";
+      cy = "claude --dangerously-skip-permissions";
       lg = "lazygit";
 
       # ファイル操作
