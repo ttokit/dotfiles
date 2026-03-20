@@ -5,6 +5,9 @@
   # Determinate Nix が独自のデーモンで Nix を管理するため
   nix.enable = false;
 
+  # ユーザー固有の system.defaults 設定に必要
+  system.primaryUser = "ttokit";
+
   # zsh をデフォルトシェルとして有効化
   # Home Manager の programs.zsh と連携するために必要
   programs.zsh.enable = true;
@@ -27,6 +30,9 @@
       fi
     done
   '';
+
+  # スクリーンショットの保存先を変更
+  system.defaults.screencapture.location = "~/Pictures/Screenshots";
 
   # 必須: nix-darwin のバージョン管理
   # これにより設定の互換性が保たれる
