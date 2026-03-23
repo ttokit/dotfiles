@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -43,18 +43,7 @@
     nodePackages.typescript-language-server
     # フォント
     hackgen-nf-font  # 白源 Nerd Font（日本語 + Nerd Fontアイコン対応）
-    # GUI アプリ
-    inputs.arto.packages.${pkgs.system}.default # Markdown リーダー
-    # ユーティリティ
-    duti # デフォルトアプリ設定ツール
   ];
-
-  # マークダウンファイルのデフォルトアプリをArtoに設定
-  home.activation.setDefaultApps = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    echo "Setting Arto as default app for Markdown files..."
-    ${pkgs.duti}/bin/duti -s com.lambdalisue.Arto public.markdown all 2>/dev/null || true
-    ${pkgs.duti}/bin/duti -s com.lambdalisue.Arto net.daringfireball.markdown all 2>/dev/null || true
-  '';
 
   # 必須: Home Manager のバージョン管理
   home.stateVersion = "24.11";

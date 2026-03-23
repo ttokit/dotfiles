@@ -16,9 +16,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs"; # nixpkgs を共有
     };
-
-    # Arto - Markdown リーダー
-    arto.url = "github:arto-app/Arto";
   };
 
   outputs = inputs@{ self, nixpkgs, darwin, home-manager, ... }: {

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   # Determinate Nix を使用しているため、nix-darwin の Nix 管理を無効化
@@ -12,30 +12,10 @@
   # Home Manager の programs.zsh と連携するために必要
   programs.zsh.enable = true;
 
-  # Nix管理アプリを /Applications/Nix Apps に配置（Spotlight対応）
-  # シンボリックリンクではなくmkaliasでエイリアスを作成することでSpotlightが認識する
-  system.activationScripts.applications.text = let
-    apps = [
-      inputs.arto.packages.${pkgs.system}.default
-    ];
-  in pkgs.lib.mkForce ''
-    echo "setting up /Applications/Nix Apps..." >&2
-    rm -rf /Applications/Nix\ Apps
-    mkdir -p /Applications/Nix\ Apps
-    for app in ${builtins.concatStringsSep " " (map (p: "${p}/Applications/*.app") apps)}; do
-      if [ -e "$app" ]; then
-        app_name=$(basename "$app")
-        echo "linking $app_name" >&2
-        ${pkgs.mkalias}/bin/mkalias "$app" "/Applications/Nix Apps/$app_name"
-      fi
-    done
-  '';
-
   # スクリーンショットの保存先を変更
   system.defaults.screencapture.location = "~/Pictures/Screenshots";
 
   # Homebrew パッケージの宣言的管理
-  # cask（GUIアプリ）を一元管理。CLIツールはnixpkgsで管理。
   homebrew = {
     enable = true;
     onActivation = {
@@ -43,7 +23,11 @@
       cleanup = "zap";
     };
     taps = [
+      "k1LoW/tap"
       "steipete/tap"
+    ];
+    brews = [
+      "k1LoW/tap/mo"
     ];
     casks = [
       "1password"
