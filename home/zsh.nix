@@ -71,6 +71,9 @@
       pp = "procs";
       dst = "dust";
       btm = "btm";
+
+      # Homebrew 一括更新
+      bup = "brew update && brew upgrade && brew upgrade --cask && brew cleanup";
     };
   };
 

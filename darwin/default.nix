@@ -34,6 +34,38 @@
   # スクリーンショットの保存先を変更
   system.defaults.screencapture.location = "~/Pictures/Screenshots";
 
+  # Homebrew パッケージの宣言的管理
+  # cask（GUIアプリ）を一元管理。CLIツールはnixpkgsで管理。
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = false;
+      cleanup = "zap";
+    };
+    taps = [
+      "steipete/tap"
+    ];
+    casks = [
+      "1password"
+      "1password-cli"
+      "chatgpt-atlas"
+      "claude"
+      "clipy"
+      "cmux"
+      "codex"
+      "codexbar"
+      "cursor"
+      "ghostty"
+      "google-chrome"
+      "homerow"
+      "nani"
+      "raycast"
+      "rectangle"
+      "slack"
+      "todoist-app"
+    ];
+  };
+
   # 必須: nix-darwin のバージョン管理
   # これにより設定の互換性が保たれる
   system.stateVersion = 5;
