@@ -39,6 +39,7 @@
         "shift+enter=text:\\x1b\\r"
         "cmd+d=new_split:right"
         "cmd+e=equalize_splits"
+        "¥=text:\\\\"
       ];
     };
   };
