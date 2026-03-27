@@ -1,10 +1,53 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 9999,
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
     "allow": [
       "Write(~/.claude/learnings/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ~/*)",
+      "Bash(sudo *)",
+      "Bash(mkfs *)",
+      "Bash(dd if=*)",
+      "Bash(git push * --force*)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean -fd*)",
+      "Bash(git commit * --no-verify*)",
+      "Bash(git commit --no-verify*)",
+      "Bash(cat *.env.local*)",
+      "Bash(head *.env.local*)",
+      "Bash(tail *.env.local*)",
+      "Bash(cat *.env.*.local*)",
+      "Bash(head *.env.*.local*)",
+      "Bash(tail *.env.*.local*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.config/gh/hosts.yml)",
+      "Read(.env.local)",
+      "Read(.env.*.local)",
+      "Read(**/.env.local)",
+      "Read(**/.env.*.local)",
+      "Edit(~/.bashrc)",
+      "Edit(~/.zshrc)",
+      "Edit(~/.bash_profile)",
+      "Edit(~/.zprofile)",
+      "Edit(~/.profile)",
+      "Edit(~/.ssh/**)",
+      "Write(~/.bashrc)",
+      "Write(~/.zshrc)",
+      "Write(~/.bash_profile)",
+      "Write(~/.zprofile)",
+      "Write(~/.profile)",
+      "Write(~/.ssh/**)"
     ]
   },
   "hooks": {
@@ -41,9 +84,42 @@
     "document-skills@anthropic-agent-skills": true,
     "deslop@kuu-marketplace": true,
     "clarify@kuu-marketplace": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true,
+    "aws-common@aws-skills": true,
+    "aws-cdk@aws-skills": true,
+    "ralph-loop@claude-plugins-official": true,
+    "pm-toolkit@pm-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "pm-skills": {
+      "source": {
+        "source": "github",
+        "repo": "phuryn/pm-skills"
+      }
+    }
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "github.com"
+      ]
+    }
+  },
+  "spinnerVerbs": {
+    "mode": "append",
+    "verbs": [
+      "うるとらしんく",
+      "Thinking",
+      "Processing",
+      "Working"
+    ]
   },
   "language": "Japanese",
+  "effortLevel": "high",
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "defaultMode": "auto",
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true
 }
