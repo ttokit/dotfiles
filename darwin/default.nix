@@ -47,6 +47,7 @@
       "rectangle"
       "slack"
       "todoist-app"
+      "typeless"
     ];
   };
 
