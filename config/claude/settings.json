@@ -89,7 +89,8 @@
     "aws-common@aws-skills": true,
     "aws-cdk@aws-skills": true,
     "ralph-loop@claude-plugins-official": true,
-    "pm-toolkit@pm-skills": true
+    "pm-toolkit@pm-skills": true,
+    "codex@openai-codex": true
   },
   "extraKnownMarketplaces": {
     "pm-skills": {
@@ -97,8 +98,15 @@
         "source": "github",
         "repo": "phuryn/pm-skills"
       }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
     }
   },
+  "language": "Japanese",
   "sandbox": {
     "network": {
       "allowedDomains": [
@@ -115,11 +123,10 @@
       "Working"
     ]
   },
-  "language": "Japanese",
   "effortLevel": "high",
-  "voiceEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "defaultMode": "auto",
   "autoUpdatesChannel": "latest",
-  "skipDangerousModePermissionPrompt": true
+  "voiceEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "defaultMode": "auto"
 }
