@@ -44,6 +44,7 @@
       "google-chrome"
       "homerow"
       "nani"
+      "obsidian"
       "raycast"
       "rectangle"
       "slack"
