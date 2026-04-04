@@ -39,8 +39,8 @@
     uv        # Python パッケージマネージャー (uvx を含む)
     gh        # GitHub CLI
     lazygit   # Git TUI クライアント
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+    typescript
+    typescript-language-server
     # フォント
     hackgen-nf-font  # 白源 Nerd Font（日本語 + Nerd Fontアイコン対応）
   ];
