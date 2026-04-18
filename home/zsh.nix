@@ -54,6 +54,7 @@
     # エイリアス
     shellAliases = {
       cc = "claude";
+      ca = "claude --permission-mode auto";
       cy = "claude --dangerously-skip-permissions";
       lg = "lazygit";
 
