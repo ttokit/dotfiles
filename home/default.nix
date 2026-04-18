@@ -17,6 +17,7 @@
     ./starship.nix    # プロンプト（TokyoNight テーマ）
     ./rust.nix        # Rust/Cargo
     ./jankyborders.nix # ウィンドウボーダー
+    ./google-cloud.nix # Google Cloud SDK & Workspace CLI
   ];
 
   # ユーザー情報
