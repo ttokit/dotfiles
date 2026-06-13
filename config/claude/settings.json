@@ -125,8 +125,9 @@
   },
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
-  "voiceEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true,
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true,
   "defaultMode": "auto"
 }
