@@ -27,6 +27,9 @@
       "steipete/tap"
     ];
     brews = [
+      "colima"
+      "docker"
+      "docker-compose"
       "k1LoW/tap/mo"
       "mas"
     ];

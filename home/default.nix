@@ -10,6 +10,7 @@
     ./yazi.nix        # Yazi ファイルマネージャー設定
     ./neovim.nix      # Neovim エディタ設定
     ./npm.nix         # npm グローバルパッケージ管理
+    ./docker.nix      # Docker CLI プラグイン設定
     ./modern-cli.nix  # モダンCLIツール（bat, eza, fd, rg, procs, dust, bottom）
     ./fzf.nix         # ファジー検索
     ./ghq.nix         # ghq リポジトリ管理
