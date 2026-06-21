@@ -36,3 +36,14 @@ cask に存在しないため、個別にインストールが必要。
 - Slack: ワークスペースへのサインイン
 - Cursor: Settings Sync
 - Raycast: 設定のインポート
+
+## 4. Docker (Colima)
+
+Docker 関連パッケージは Homebrew 経由で宣言的に管理する。`darwin-rebuild switch` 適用後、初回のみ Colima の VM を起動する。
+
+```bash
+colima start
+docker compose version
+```
+
+常時起動したい場合は `brew services start colima` も利用できるが、通常は必要なときに `colima start` する。
