@@ -43,6 +43,8 @@
     lazygit   # Git TUI クライアント
     typescript
     typescript-language-server
+    libreoffice-bin # DOCX などのオフィス文書を開くためのGUIアプリ
+
     # フォント
     hackgen-nf-font  # 白源 Nerd Font（日本語 + Nerd Fontアイコン対応）
   ];
