@@ -4,7 +4,7 @@ let
   npmGlobalDir = "${config.home.homeDirectory}/.npm-global";
 
   npmGlobalPackages = [
-    "@openai/codex@0.142.3"
+    "@openai/codex@0.142.4"
   ];
 in
 {
