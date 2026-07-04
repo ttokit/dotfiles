@@ -30,6 +30,8 @@
       "colima"
       "docker"
       "docker-compose"
+      "fontconfig"
+      "freetype"
       "k1LoW/tap/mo"
       "little-cms2"
       "mas"
