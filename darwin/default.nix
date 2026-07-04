@@ -31,6 +31,7 @@
       "docker"
       "docker-compose"
       "k1LoW/tap/mo"
+      "little-cms2"
       "mas"
     ];
     casks = [
