@@ -13,8 +13,7 @@ Use the Context7 MCP tools (resolve the library id, then get the docs) when code
 
 ## GitHub Operations
 
-- GitHubのリソース（リポジトリ、Issue、PR、コード等）を取得する際は、常にghコマンドを使用する
-- WebFetchやWebSearchではなく、ghコマンドを優先する
+- GitHubのリソース（リポジトリ、Issue、PR、コード等）は gh コマンドで取得する。WebFetch や WebSearch は使わない
 - ghコマンドがTLSエラーで失敗した場合、sandboxモードが原因の可能性が高い。sandboxを無効化してリトライすること
 
 ## Git Commit Messages
@@ -28,7 +27,7 @@ worktree の作成・削除は git-wt（`git wt`）を使い、素の `git workt
 配置先・コピー対象・フックは各リポジトリの `wt.*` git config に定義されているため、
 素の git worktree で作るとそれらが適用されない。
 
-- 作成: `WT=$(git wt --nocd <branch> origin/master | tail -1)`
+- 作成: `WT=$(git wt --nocd <branch> origin/<デフォルトブランチ> | tail -1)`
   cd はシェル関数なのでエージェントからは効かない。最終行に出るパスを使う
 - 削除: `git wt -d <branch>`（`-D` は force なのでユーザーの指示がある場合のみ）
 - `wt.*` config は勝手に変更しない
@@ -70,7 +69,7 @@ PR説明・チケットのコメント・設計ドキュメントなど、他人
 
 明示的に「文章を書いて」と依頼されていなくても、上記の媒体に出す文面を作る場面では必ず通す。
 他のスキルやワークフロー（PRレビュー対応、チケット起票など）の工程の内側で文面が発生する場合も同じ。
-推敲で変えるのは語尾・文の長さ・比喩・つなぎ語だけで、結論・事実・コミットハッシュ・技術用語は変えない。
+推敲では結論・事実・コミットハッシュ・技術用語を変えない。何を直すかは各推敲スキルに従う。
 
 @RTK.md
 
